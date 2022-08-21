@@ -15,8 +15,14 @@ type Mutation {
    addGadget(gadget:GadgetInput): Gadget
 }
 type Query {
-    getGadgets: [Gadget]
+    getGadgets: [Gadget],
+    gadgetbyId(id: ID!): Gadget
+
 }
+
+
+
+
 
 
 

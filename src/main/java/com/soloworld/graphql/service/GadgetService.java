@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class GadgetService {
@@ -15,6 +16,10 @@ public class GadgetService {
 
     public List<Gadget> getGadgetList(){
         return gadgetRepository.findAll();
+    }
+
+    public Optional<Gadget> gadgetOptional(Integer id) {
+        return gadgetRepository.findById(id);
     }
 
     public Gadget saveGadget(Gadget gadget) {

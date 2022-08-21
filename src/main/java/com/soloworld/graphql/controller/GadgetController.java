@@ -8,6 +8,7 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class GadgetController {
@@ -20,6 +21,11 @@ public class GadgetController {
     @QueryMapping
     public List<Gadget> getGadgets() {
         return gadgetService.getGadgetList();
+    }
+
+    @QueryMapping
+    public Optional<Gadget> gadgetbyId(@Argument  Integer id) {
+        return gadgetService.gadgetOptional(id);
     }
 
     @MutationMapping
