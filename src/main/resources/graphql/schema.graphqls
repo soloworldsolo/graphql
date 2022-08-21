@@ -1,0 +1,23 @@
+type Gadget{
+    id:ID!
+    cost:Float
+    country:String
+    name:String
+
+}
+
+input GadgetInput{
+    cost:Float
+    country:String
+    name:String
+}
+type Mutation {
+   addGadget(gadget:GadgetInput): Gadget
+}
+type Query {
+    getGadgets: [Gadget]
+}
+
+
+
+
