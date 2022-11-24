@@ -3,6 +3,7 @@ type Gadget{
     cost:Float
     country:String
     name:String
+    versions:[Version]
 
 }
 
@@ -12,12 +13,26 @@ input GadgetInput{
     name:String
 }
 type Mutation {
-   addGadget(gadget:GadgetInput): Gadget
+   addGadget(gadget:GadgetInput): Gadget,
+   addVersion(version:VersionInput): Version
+
+}
+
+
+input VersionInput {
+  versionId:String
+  gadgetId:Int
 }
 type Query {
     getGadgets: [Gadget],
     gadgetbyId(id: ID!): Gadget
 
+}
+
+type Version{
+id:ID!
+versionId:String
+gadgetId:Int
 }
 
 

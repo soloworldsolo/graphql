@@ -2,7 +2,9 @@ package com.soloworld.graphql.service;
 
 import com.soloworld.graphql.model.Gadget;
 import com.soloworld.graphql.model.GadgetInput;
+import com.soloworld.graphql.model.Version;
 import com.soloworld.graphql.repository.GadgetRepository;
+import com.soloworld.graphql.repository.VersionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,6 +15,8 @@ import java.util.Optional;
 public class GadgetService {
     @Autowired
     private GadgetRepository gadgetRepository;
+    @Autowired
+    private VersionRepository versionRepository;
 
     public List<Gadget> getGadgetList(){
         return gadgetRepository.findAll();
@@ -27,5 +31,7 @@ public class GadgetService {
     }
 
 
-
+    public Version saveVersion(Version version) {
+        return versionRepository.save(version);
+    }
 }
