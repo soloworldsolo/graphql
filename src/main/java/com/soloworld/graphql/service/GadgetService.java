@@ -13,9 +13,7 @@ import java.util.Optional;
 
 @Service
 public class GadgetService {
-    @Autowired
     private GadgetRepository gadgetRepository;
-    @Autowired
     private VersionRepository versionRepository;
 
     public List<Gadget> getGadgetList(){
@@ -33,5 +31,11 @@ public class GadgetService {
 
     public Version saveVersion(Version version) {
         return versionRepository.save(version);
+    }
+
+
+    public GadgetService(GadgetRepository gadgetRepository, VersionRepository versionRepository) {
+        this.gadgetRepository = gadgetRepository;
+        this.versionRepository = versionRepository;
     }
 }

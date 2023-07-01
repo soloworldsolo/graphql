@@ -1,25 +1,5 @@
 package com.soloworld.graphql.model;
 
-public class VersionInput {
+public record VersionInput (String versionId, Integer gadgetId) {
 
-    private String versionId;
-
-    private Integer gadgetId;
-
-
-    public String getVersionId() {
-        return versionId;
-    }
-
-    public void setVersionId(String versionId) {
-        this.versionId = versionId;
-    }
-
-    public Integer getGadgetId() {
-        return gadgetId;
-    }
-
-    public void setGadgetId(Integer gadgetId) {
-        this.gadgetId = gadgetId;
-    }
 }
