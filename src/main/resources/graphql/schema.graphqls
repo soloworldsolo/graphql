@@ -7,14 +7,26 @@ type Gadget{
 
 }
 
+type UserDetail {
+    id:ID!
+    email:String ,
+    password:String
+}
+
 input GadgetInput{
     cost:Float
     country:String
     name:String
 }
+
+input UserInput {
+    email:String ,
+    password:String
+}
 type Mutation {
    addGadget(gadget:GadgetInput): Gadget,
    addVersion(version:VersionInput): Version
+   addUser(user:UserInput): UserDetail
 
 }
 

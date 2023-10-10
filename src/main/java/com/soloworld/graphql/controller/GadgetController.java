@@ -39,6 +39,7 @@ public class GadgetController {
     public Gadget addGadget(@Argument Gadget gadget) {
         return gadgetService.saveGadget(gadget);
     }
+
     @MutationMapping
 
     public Version addVersion(@Argument Version version) {
