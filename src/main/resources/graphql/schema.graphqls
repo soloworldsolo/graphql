@@ -36,7 +36,7 @@ input VersionInput {
   gadgetId:Int
 }
 type Query {
-    getGadgets: [Gadget],
+    getGadgets(first:Int ,after:String,last:Int,before:String): GadgetConnection
     gadgetbyId(id: ID!): Gadget
 
 }

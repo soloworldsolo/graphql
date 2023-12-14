@@ -6,6 +6,10 @@ import com.soloworld.graphql.model.Version;
 import com.soloworld.graphql.repository.GadgetRepository;
 import com.soloworld.graphql.repository.VersionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Limit;
+import org.springframework.data.domain.ScrollPosition;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Window;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,8 +20,8 @@ public class GadgetService {
     private GadgetRepository gadgetRepository;
     private VersionRepository versionRepository;
 
-    public List<Gadget> getGadgetList(){
-        return gadgetRepository.findAll();
+    public Window<Gadget> getGadgetList(ScrollPosition scrollPosition , Limit limit, Sort sort){
+        return gadgetRepository.findAllBy(scrollPosition,limit,sort);
     }
 
     public Optional<Gadget> gadgetOptional(Integer id) {
