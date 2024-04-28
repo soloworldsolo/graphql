@@ -21,7 +21,7 @@ public class GraphqlApplication {
     @Bean
     public RuntimeWiringConfigurer runtimeWiringConfigurer() {
         return wiringBuilder -> wiringBuilder
-                .scalar(ExtendedScalars.Date);
+                .scalar(ExtendedScalars.Date) ;
 
     }
 
