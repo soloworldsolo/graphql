@@ -2,6 +2,8 @@ package com.soloworld.graphql.model;
 
 import jakarta.persistence.*;
 
+import java.util.Date;
+
 @Entity
 public class Version {
     @Id
@@ -9,6 +11,7 @@ public class Version {
     private Integer id;
     private String versionId;
     private Integer gadgetId;
+    private Date releaseDate;
 
     public Integer getId() {
         return id;
@@ -32,5 +35,14 @@ public class Version {
 
     public void setGadgetId(int gadgetId) {
         this.gadgetId = gadgetId;
+    }
+
+
+    public Date getReleaseDate() {
+        return releaseDate;
+    }
+
+    public void setReleaseDate(Date releaseDate) {
+        this.releaseDate = releaseDate;
     }
 }

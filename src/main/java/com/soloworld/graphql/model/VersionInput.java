@@ -1,5 +1,7 @@
 package com.soloworld.graphql.model;
 
-public record VersionInput (String versionId, Integer gadgetId) {
+import java.util.Date;
+
+public record VersionInput (String versionId, Integer gadgetId, Date releaseDate) {
 
 }

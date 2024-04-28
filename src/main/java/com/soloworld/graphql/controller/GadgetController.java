@@ -41,7 +41,6 @@ public class GadgetController {
     }
 
     @MutationMapping
-
     public Version addVersion(@Argument Version version) {
         return gadgetService.saveVersion(version);
     }

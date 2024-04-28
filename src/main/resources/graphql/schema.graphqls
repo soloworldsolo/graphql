@@ -23,17 +23,18 @@ input UserInput {
     email:String ,
     password:String
 }
-type Mutation {
-   addGadget(gadget:GadgetInput): Gadget,
-   addVersion(version:VersionInput): Version
-   addUser(user:UserInput): UserDetail
 
+type Version{
+    id:ID!
+    versionId:String
+    gadgetId:Int
+    releaseDate:Date
 }
-
 
 input VersionInput {
   versionId:String
   gadgetId:Int
+  releaseDate:Date
 }
 type Query {
     getGadgets: [Gadget],
@@ -41,11 +42,16 @@ type Query {
 
 }
 
-type Version{
-id:ID!
-versionId:String
-gadgetId:Int
+type Mutation {
+    addGadget(gadget:GadgetInput): Gadget,
+    addVersion(version:VersionInput): Version
+    addUser(user:UserInput): UserDetail
+
 }
+
+scalar Date
+
+
 
 
 
